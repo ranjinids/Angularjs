@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+
+<script>
+var app=angular.module("myApp",[]);
+
+app.controller("mycntl",function($scope)
+{
+
+$scope.factorial=function()
+{
+	var fact=1;
+	for( var i=1;i<=$scope.value;i++)
+	{ 
+	   
+      fact=fact*i;
+  	}
+	$scope.result=fact;
+	return fact;
+}
+
+});
+</script>
+
+</head>
+
+
+<body ng-App="myApp" ng-controller="mycntl">
+<form>
+
+<feildset>
+
+<legend>factorial</legend>
+
+Enter the number:<input type="number" ng-model="value"/>
+<br/>
+factorial of number:<input type="number" ng-model="result"/>
+<br/>
+
+<input type="submit" ng-click="factorial()">
+
+ </feildset>
+ </form>
+
+
+
+
+</body>
+
+</html>

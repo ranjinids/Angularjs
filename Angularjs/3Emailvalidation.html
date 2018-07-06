@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="angular.min.js"></script>
+    <style>
+        .err {
+            font:13px Verdana;
+            color:Red;
+        }
+        form{
+        	position:absolute;
+        	top:30%;
+        	right:40%;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myController">
+    	
+        <form name="form">
+        <fieldset>
+        	<legend>Enter Email</legend>
+            <input type="email" name="emailID" 
+                ng-model="email"
+                placeholder="Enter an Email ID" />
+
+            <span class="err" ng-show="form.emailID.$error.email">
+                Not a valid Email
+            </span>
+            <p>
+                <input type="submit" ng-disabled="form.$invalid || !email" />
+            </p>
+
+            <p>{{email}}</p>
+		</fieldset>
+        </form>
+    </div>
+</body>
+<script>
+    angular.module("myApp", [])
+        .controller('myController', ['$scope', function ($scope) {
+        } ]);
+</script>
+</html>

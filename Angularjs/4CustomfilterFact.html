@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+
+<script>
+var app=angular.module("myApp",[]);
+
+app.controller("mycntl",function($scope)
+{
+$scope.name=value;
+});
+
+
+app.filter('factfilter',function()
+{
+	return function(name)
+	{
+		var fact=1;
+	for( var i=1;i<=name;i++)
+	{ 
+	   
+      fact=fact*i;
+  	}
+	
+	return fact;
+		
+	};
+});
+</script>
+
+</head>
+
+
+<body ng-App="myApp" ng-controller="mycntl">
+<input type="number" ng-model="value"/>
+
+<p> {{name | factfilter}}
+</p>
+</body>
+
+</html>

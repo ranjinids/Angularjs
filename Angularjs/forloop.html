@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+
+<head>
+<script src="angular.min.js">
+</script>
+
+</head>
+
+<body ng-app="" ng-init="employee1=[{empId:'e101',empName:'ranju',empSal:100000},{empId:'e102',empName:'rds',empSal:10000}]">
+
+
+<table border="1" >
+
+<tr>
+
+<th>employee Id</th>
+<th>Employee name</th>
+<th>Employee Salary</th>
+
+</tr>
+
+<tr ng-repeat="employee in employee1">
+	<td>{{employee.empId}}</td>
+	<td>{{employee.empName}}</td>
+	<td>{{employee.empSal}}</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+
+<script>
+ var app=angular.module('app',[]);
+
+ app.controller('appController', function($scope){
+     $scope.temp; 
+ });
+
+app.filter("myfilter",function()
+{
+	return function(temp)
+	{
+         var last=temp.toString().split('').pop();
+		
+			if(last==1)
+			{
+				var re="st"
+				var res=temp.concat(re);
+				return  res;
+			}
+			else if(last==2)
+			{
+				var re="nd"
+				var res=temp.concat(re);
+				return  res;
+			}else if(last==3)
+			{
+				var re="rd"
+				var res=temp.concat(re);
+				return  res;
+			}else{
+				var re="th"
+				var res=temp.concat(re);
+				return  res;
+			}
+		
+		
+	};
+});
+
+</script>
+</head>
+
+<body ng-App="app" ng-controller="appController" >
+
+<input type="text" ng-model="temp"/>
+	<p>
+		{{temp| myfilter}}
+	</p>
+</body>
+
+</html>
+
+
+
+ 

@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+	<head>
+
+	<script>
+	function f1()
+	{
+		var name=document.getElementById("name").value;
+		document.getElementById("result").value=name;
+		document.getElementById("sample").innerHTML=name;
+	}
+	</script>
+	</head>
+
+<body>
+
+Name:<input type="text" id="name"/>
+<br/>
+<input type="submit" name="sumbit"  onclick="f1()"/>
+<br/>
+
+Result:<input type="text" id="result"/>
+<div id="sample"></div>
+
+</body>
+
+</html>

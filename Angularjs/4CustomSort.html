@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+
+<script>
+ var app=angular.module('app',[]);
+
+ app.controller('appController', function($scope){
+     $scope.temp=[101,60,100,10]; 
+ });
+
+app.filter("myfilter",function()
+{
+	return function(temp,value)
+	{
+	if(value==true)
+	{
+         var re=temp.sort(function(a,b){return (a-b)});
+        // var res=re.reverse();
+         return re;
+	}
+	else
+	{
+		var re=temp.sort(function(a,b){return (a-b)});
+         var res=re.reverse();
+         return res;
+	}
+};
+});
+
+</script>
+</head>
+
+<body ng-App="app" ng-controller="appController" >
+
+
+	<p>
+		{{temp| myfilter:true}}
+	</p>
+</body>
+
+</html>
+
+
+
+ 

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+
+<script>
+ var app=angular.module('app', []);
+ app.controller('appController', function($scope) {
+     $scope.temp ="144-3455"; 
+ });
+
+app.filter("myfilter",function()
+{
+	return function(temp)
+	{
+		var splitString = temp.split("-");
+   var ener=splitString.join();
+    var splitString1 = ener.replace(",",'\t');
+      return  splitString1
+
+	};
+});
+
+</script>
+</head>
+
+<body ng-App="app" ng-controller="appController">
+
+	<p>
+		{{temp|myfilter}}
+	</p>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+ 
